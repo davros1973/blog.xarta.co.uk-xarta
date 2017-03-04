@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
             codeButtonLabelChange();
         });
 
-        // TODO: THIS DOESN'T WORK WHEN USING MENU-TAB
+
         $("a.inflate-code").on( "click", function() {
             var probableContainerForPercentCalcs;
 
@@ -177,18 +177,18 @@ jQuery(document).ready(function($) {
 
 });
 
-    // script loaded in site header
-    function ledMsg($entry_title)
-    {
-	/* <div id="ledmarquee">
-	Multi-<red>C<blue>o<yellow>l<green>o<red>r<green> JavaScript LED marquee - IE & FF compatible - 
-        <yellow>no fonts required<green> - one image (36k) - user-defined speed & width - 012...789 abc...xyz +-*
-        /=?^&().,'!$...
-	</div>
-	*/
+// script loaded in site header
+function ledMsg($entry_title)
+{
+/* <div id="ledmarquee">
+Multi-<red>C<blue>o<yellow>l<green>o<red>r<green> JavaScript LED marquee - IE & FF compatible - 
+    <yellow>no fonts required<green> - one image (36k) - user-defined speed & width - 012...789 abc...xyz +-*
+    /=?^&().,'!$...
+</div>
+*/
 
-	var ledDiv = '<div id=\"ledmarquee\">' + $entry_title + '</div>';
-	var ledDivTarget = document.getElementsByClassName("entry-title");
-	ledDivTarget[0].innerHTML = ledDiv; 
-        onloadAppend(marqueeInit);
-    }
+var ledDiv = '<div id=\"ledmarquee\">' + $entry_title + '</div>';
+var ledDivTarget = document.getElementsByClassName("entry-title");
+ledDivTarget[0].innerHTML = ledDiv; 
+    onloadAppend(marqueeInit);
+}
