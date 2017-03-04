@@ -1,8 +1,14 @@
 jQuery(document).ready(function($) {
     
-    // 2017 February, by dave@xarta.co.uk
+    // 2017 February, by admin@xarta.co.uk
+    // first time I've done any real JavaScript, JQuery, CSS stuff in many years
+    // ... and I never previously learned JavaScript or CSS beyond pretty basic stuff
+    // ... really finding my feet.  Hopefully I'll mature and advance this code over time.
 
+    // *********************************************************
     // FOLLOWING FUNCTIONS TO DO WITH DISPLAYING/PRESENTING CODE
+    // *********************************************************
+
     // -> using SyntaxHighlighter Evolved plug-in, and combining with wp-colorbox plug-in
     // -> also uses a plug-in for easy css buttons with shortcodes
 
@@ -10,9 +16,9 @@ jQuery(document).ready(function($) {
     $(".wp-colorbox-inline").colorbox({inline:true, width:"99%", minWidth:"99%",maxWidth:"99%"}).delay(50);
 
 
-    $(".xarta-code-style").width("100%");                      // targeting divs with presentation code
-    //var curWidthPx = parseInt($(window).width()+"px");  // browser window width
-    //var big = curWidthPx > 1000;                        // might use in future (but using @media queries)
+    $(".xarta-code-style").width("100%");                   // targeting divs with presentation code
+    //var curWidthPx = parseInt($(window).width()+"px");    // browser window width
+    //var big = curWidthPx > 1000;                          // might use in future (but using @media queries)
     
 
     // call this from window resize event available to JQuery, and pass as a callback
@@ -47,7 +53,6 @@ jQuery(document).ready(function($) {
             ' dashicons-minus shrink-code" style="background-color: #000; color: #ffffff;" ' +
             ' data-fasc-style="background-color:#000;color:#ffffff;"></a>';
 
-        // $(".content_box a").not(".button") // example of using .not
         $("p+ .xarta-code-buttons").prepend(myprependFont);
         $("p+ .xarta-code-buttons").prepend(myprependWidth);
         codeButtonLabelChange();
@@ -62,7 +67,7 @@ jQuery(document).ready(function($) {
             var curSize = parseInt($(".xarta-big-code").css('font-size'));
             curSize = curSize - 1;
             $( '.xarta-big-code' ).each(function () {
-                this.style.setProperty( 'font-size', curSize +'px', 'important' );
+                this.style.setProperty( 'font-size', curSize +'px', '!important' );
             });
         });
 
@@ -70,7 +75,7 @@ jQuery(document).ready(function($) {
             var curSize = parseInt($(".xarta-big-code").css('font-size'));
             curSize = curSize + 1;
             $( '.xarta-big-code' ).each(function () {
-                this.style.setProperty( 'font-size', curSize +'px', 'important' );
+                this.style.setProperty( 'font-size', curSize +'px', '!important' );
             });
         });
 
@@ -79,7 +84,8 @@ jQuery(document).ready(function($) {
         // (the function was passed to this function)
 
         $("a.shrink-code").on( "click", function() {
-            // .entry-content class particular to this theme
+            // .entry-content class particular to this theme (maybe)
+            
             var curEntryContentWidthPx = parseInt($(".entry-content").width());
             var curWinWidthPx = parseInt($(window).width()+"px");
             var curWidth = parseInt($(".xarta-code-width").width());
@@ -91,8 +97,9 @@ jQuery(document).ready(function($) {
 
             $(".xarta-code-width").width(newWidthPercent+"%");
             codeButtonLabelChange();
-         });
+        });
 
+        // TODO: THIS DOESN'T WORK WHEN USING MENU-TAB
         $("a.inflate-code").on( "click", function() {
             var curEntryContentWidthPx = parseInt($(".entry-content").width());
             var curWinWidthPx = parseInt($(window).width()+"px");
@@ -103,7 +110,7 @@ jQuery(document).ready(function($) {
             $(".xarta-code-width").width(newWidthPercent+"%");
             codeButtonLabelChange();
         });
-
+    
     }; // end renderCodeButtons()
 
     
@@ -133,10 +140,9 @@ jQuery(document).ready(function($) {
     $("p:first").addClass("first-paragraph");
 
 
-
-
 });
 
+    // script loaded in site header
     function ledMsg($entry_title)
     {
 	/* <div id="ledmarquee">
