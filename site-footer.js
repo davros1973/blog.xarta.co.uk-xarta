@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
             var curSize = parseInt($(".xarta-big-code").css('font-size'));
             curSize = curSize - 1;
             $( '.xarta-big-code' ).each(function () {
-                this.style.setProperty( 'font-size', curSize +'px', '!important' );
+                this.style.setProperty( 'font-size', curSize +'px', 'important' );
             });
         });
 
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
             var curSize = parseInt($(".xarta-big-code").css('font-size'));
             curSize = curSize + 1;
             $( '.xarta-big-code' ).each(function () {
-                this.style.setProperty( 'font-size', curSize +'px', '!important' );
+                this.style.setProperty( 'font-size', curSize +'px', 'important' );
             });
         });
 
@@ -85,15 +85,28 @@ jQuery(document).ready(function($) {
 
         $("a.shrink-code").on( "click", function() {
             // .entry-content class particular to this theme (maybe)
-            
-            var curEntryContentWidthPx = parseInt($(".entry-content").width());
-            var curWinWidthPx = parseInt($(window).width()+"px");
+
+            var probableContainerForPercentCalcs;
+
+            if($(".tabcontents").length)
+            {
+                console.log("Ok: seem to be in a menutab");
+                probableContainerForPercentCalcs = ".tabcontents";
+                // so that new % doesn't end-up less than current%    
+            }
+            else
+            {
+                probableContainerForPercentCalcs = ".entry-content";    
+            }
+
+            var curContainerWidthPx = parseInt($(probableContainerForPercentCalcs).width());
+            //var curWinWidthPx = parseInt($(window).width()+"px");
             var curWidth = parseInt($(".xarta-code-width").width());
-            var fivePercent = curEntryContentWidthPx/20;
+            var fivePercent = curContainerWidthPx/20;
             var newWidthPx = curWidth-fivePercent;
          
             // IMPORTANT: keep as percentage e.g. orientation on mobile device
-            var newWidthPercent = newWidthPx/curEntryContentWidthPx*100;
+            var newWidthPercent = newWidthPx/curContainerWidthPx*100;
 
             $(".xarta-code-width").width(newWidthPercent+"%");
             codeButtonLabelChange();
@@ -101,12 +114,34 @@ jQuery(document).ready(function($) {
 
         // TODO: THIS DOESN'T WORK WHEN USING MENU-TAB
         $("a.inflate-code").on( "click", function() {
-            var curEntryContentWidthPx = parseInt($(".entry-content").width());
-            var curWinWidthPx = parseInt($(window).width()+"px");
+            var probableContainerForPercentCalcs;
+
+            if($(".tabcontents").length)
+            {
+                console.log("Ok: seem to be in a menutab");
+                probableContainerForPercentCalcs = ".tabcontents";
+                // so that new % doesn't end-up less than current%    
+            }
+            else
+            {
+                probableContainerForPercentCalcs = ".entry-content";    
+            }
+
+            var curContainerWidthPx = parseInt($(probableContainerForPercentCalcs).width());
+            console.log("curContainerWidthPx: "+curContainerWidthPx);
+            //var curWinWidthPx = parseInt($(window).width()+"px");
+            //console.log("curWinWidthPx: "+curWinWidthPx);
             var curWidth = parseInt($(".xarta-code-width").width());
-            var fivePercent = curEntryContentWidthPx/20;
+            console.log("curWidth: "+curWidth);
+            var fivePercent = curContainerWidthPx/20;
+            console.log("fivePercent: "+fivePercent);
             var newWidthPx = curWidth+fivePercent;
-            var newWidthPercent = newWidthPx/curEntryContentWidthPx*100;
+            console.log("newWidthPx: "+newWidthPx);
+            var oldWidthPercent = curWidth/curContainerWidthPx*100;
+            console.log("oldWidthPercent: "+oldWidthPercent);
+            var newWidthPercent = newWidthPx/curContainerWidthPx*100;
+            console.log("newWidthPercent: "+newWidthPercent);
+
             $(".xarta-code-width").width(newWidthPercent+"%");
             codeButtonLabelChange();
         });
