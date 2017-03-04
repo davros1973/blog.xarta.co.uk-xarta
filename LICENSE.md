@@ -2,6 +2,11 @@ MIT License
 
 Copyright (c) 2017 David Bayliss
 
+ANY SOFTWARE INCLUDED IN THIS REPO THAT HAS ITS OWN LICENCE MUST BE CONSIDERED
+SEPARATELY ON ITS OWN TERMS. ANY AMENDMENTS I MAKE TO OTHER SOFTWARE, INCLUDED 
+HERE, CAN ALSO BE CONSIDERED, ON THEIR OWN, TO BE INCLUDED IN THIS LICENCE UNLESS
+THE SOFTWARE'S OWN LICENCE PROHIBITS IT.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
