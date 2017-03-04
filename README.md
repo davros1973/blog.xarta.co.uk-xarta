@@ -6,7 +6,7 @@ My site is currently a WordPress site, running on a LAMP set-up in a VM on Windo
 The purposes of the site are many, including to help organise myself - like keeping notes & basic how/to's, record my activities; make some of them more presentable.
 
 I'm always, always learning and experimenting, but most of it never sees the light of day, and fades in my head crowded out by so many other things.  
-This blog is to assit in mitigating that fading, and to help me demonstrate some of my abilities so as to hopefully assit me in finding work that I'm interested in.
+This blog is to assist in mitigating that fading, and to help me demonstrate some of my abilities so as to hopefully assist me in finding work that I'm interested in.
 
 A main feature of this site that I've been working on, is to integreate raw Git files into my site with syntrax highlighting and basic controls, making it easier for
 me to review my code with additional context from my website on mobile and desktop and especially on my vertically oriented desktop monitor (in a lightbox that can
